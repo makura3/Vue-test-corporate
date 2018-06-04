@@ -1,0 +1,26 @@
+{
+  "name": "vue-test-corporate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nuxt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makura3/Vue-test-corporate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/makura3/Vue-test-corporate/issues"
+  },
+  "homepage": "https://github.com/makura3/Vue-test-corporate#readme",
+  "dependencies": {
+    "nuxt": "^1.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-vue": "^4.5.0"
+  }
+}
