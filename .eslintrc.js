@@ -1,11 +1,34 @@
 module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    node: true
+  },
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
   extends: [
-    // add more generic rulesets here, such as:
-    // 'eslint:recommended',
-    'plugin:vue/essential'
+    "eslint:recommended",
+    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+    // より厳しいルールにするには`plugin:vue/strongly-recommended` もしくは `plugin:vue/recommended` に切り替えることを検討してください。
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended"
   ],
+  // *.vue files を lint にかけるために必要
+  plugins: [
+    'vue'
+  ],
+  // ここにカスタムルールを追加します。
   rules: {
-    // override/add rules settings here, such as:
-    // 'vue/no-unused-vars': 'error'
+    "semi": [2, "never"], //セミコロンチェック
+    "no-console": "off",
+    "vue/max-attributes-per-line": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": false
+      }
+    ],
   }
 }
