@@ -14,7 +14,6 @@ export default {
     WideImage
   },
   data() {
-    // 非同期でデータを取り合い場合はここに書く。
     return { text: 'hellow' }
   },
   head() {
