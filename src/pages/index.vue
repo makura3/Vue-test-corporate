@@ -1,6 +1,7 @@
 <template>
   <div>
     <WideImage />
+    <defaultWhitePanel />
     <p>{{ text }} world!</p>
     <p>テンプレートの部分は別ファイルに切り出すことが可能です。</p>
   </div>
@@ -8,10 +9,12 @@
 
 <script>
 import WideImage from '~/components/panels/wideImage.vue'
+import defaultWhitePanel from '~/components/panels/defaultWhitePanel.vue'
 
 export default {
   components: {
-    WideImage
+    WideImage,
+    defaultWhitePanel
   },
   data() {
     return { text: 'hellow' }

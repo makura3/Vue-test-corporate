@@ -12,7 +12,6 @@
               <span class="white-text text-extra-large strong text-uppercase letter-spacing-10 margin-three no-margin-bottom display-block xs-letter-spacing-6">
                 世界に驚きと感動を、僕らのこの手で。 
               </span>
-              <LinkButton />
               <a class="btn-small-white btn btn-medium margin-four no-margin-bottom no-margin-right" href="https://spice-factory.co.jp/mission/">
                 Our Mission
               </a>
