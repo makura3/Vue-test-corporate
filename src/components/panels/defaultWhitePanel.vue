@@ -9,13 +9,13 @@
       </div>
       <div class="row">
         <div class="col-md-4 col-sm-4 wow fadeInUp animated" data-wow-duration="600ms" style="visibility: visible; animation-duration: 600ms; animation-name: fadeInUp;">
-          
+          <ImageText />
         </div>
         <div class="col-md-4 col-sm-4 wow fadeInUp animated" data-wow-duration="600ms" style="visibility: visible; animation-duration: 600ms; animation-name: fadeInUp;">
-          
+          <ImageText />
         </div>
         <div class="col-md-4 col-sm-4 wow fadeInUp animated" data-wow-duration="600ms" style="visibility: visible; animation-duration: 600ms; animation-name: fadeInUp;">
-          
+          <ImageText />
         </div>
       </div>
       <div class="row">
@@ -28,13 +28,11 @@
 </template>
 
 <script>
-import WideImage from '~/components/panels/wideImage.vue'
-import defaultWhitePanel from '~/components/panels/defaultWhitePanel.vue'
+import ImageText from '~/components/cassette/imageText.vue'
 
 export default {
   components: {
-    WideImage,
-    defaultWhitePanel
+    ImageText
   }
 }
 </script>
