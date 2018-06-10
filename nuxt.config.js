@@ -14,7 +14,6 @@ module.exports = {
     }
   },
   css: [
-    // プロジェクト内の CSS ファイル
-    '@/assets/css/index.css'
+    //cssがあればここに
   ]
 }
