@@ -4,8 +4,9 @@
   </footer>
 </template>
 
-<style>
+<style scoped>
 .copy {
+  background: #eee;
   display: block;
   padding: 10px 0;
   text-align: center;
