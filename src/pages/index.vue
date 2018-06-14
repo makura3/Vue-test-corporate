@@ -23,15 +23,8 @@ export default {
   },
   async asyncData({ app }) {
     try {
-      await app.$firebase.firestore().enablePersistence()
-      const items = await app.$firebase
-        .firestore()
-        .collection('items')
-        .limit(5)
-        .get()
-      return {
-        items: items.docs
-      }
+      const items = await app.$axios.$get('http://icanhazip.com')
+      return { items }
     } catch (err) {
       console.log(err)
     }
