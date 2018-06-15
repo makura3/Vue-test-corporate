@@ -39,5 +39,6 @@ module.exports = {
   css: [
     //cssがあればここに
     'sanitize.css'
-  ]
+  ],
+  plugins: [{ src: '~/plugins/firebaseInit' }]
 }

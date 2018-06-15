@@ -9,28 +9,37 @@
         {{ item.data().description }}
       </p>
     </section>
-    <p>{{ text }} world!</p>
     <p>テンプレートの部分は別ファイルに切り出すことが可能です。</p>
   </div>
 </template>
 
 <script>
+import db from '~/plugins/firebaseInit'
+
 import Item from '~/components/panel/Item.vue'
 
 export default {
   components: {
     Item
   },
-  async asyncData({ app }) {
-    try {
-      const items = await app.$axios.$get('http://icanhazip.com')
-      return { items }
-    } catch (err) {
-      console.log(err)
+  data() {
+    return {
+      items: [],
+      loading: true
     }
   },
-  data() {
-    return { text: 'hellow' }
+  created() {
+    db.collection('items')
+      .get()
+      .then(querySnapshot => {
+        this.loading = false
+        querySnapshot.forEach(doc => {
+          let data = {
+            description: doc.data().description
+          }
+          this.items.push(data)
+        })
+      })
   }
 }
 </script>
