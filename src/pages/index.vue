@@ -5,8 +5,7 @@
       <Item />
       <Item /> -->
       <p v-for="(item, key, index) in items" :key="index">
-        {{ item.data().name }}
-        {{ item.data().description }}
+        {{ item }}
       </p>
     </section>
     <p>テンプレートの部分は別ファイルに切り出すことが可能です。</p>
@@ -34,6 +33,7 @@ export default {
       .then(querySnapshot => {
         this.loading = false
         querySnapshot.forEach(doc => {
+          console.log(`${doc.data().description}`)
           let data = {
             description: doc.data().description
           }
