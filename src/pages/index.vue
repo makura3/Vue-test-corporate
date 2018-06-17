@@ -4,9 +4,11 @@
       <!-- <Item />
       <Item />
       <Item /> -->
-      <p v-for="(item, key, index) in items" :key="index">
-        {{ item }}
-      </p>
+      <div v-for="(item, key, index) in items" :key="index">
+        <div>{{ item.url }}</div>
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.description }}</p>
+      </div>
     </section>
     <p>テンプレートの部分は別ファイルに切り出すことが可能です。</p>
   </div>
@@ -33,8 +35,9 @@ export default {
       .then(querySnapshot => {
         this.loading = false
         querySnapshot.forEach(doc => {
-          console.log(`${doc.data().description}`)
           let data = {
+            url: doc.data().url,
+            name: doc.data().name,
             description: doc.data().description
           }
           this.items.push(data)
