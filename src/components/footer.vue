@@ -1,10 +1,14 @@
 <template>
-  <footer>
+  <footer class="footer">
     <small class="copy">© 2018 makura3</small>
   </footer>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+.footer {
+  margin-top: auto;
+}
+
 .copy {
   background: #eee;
   display: block;

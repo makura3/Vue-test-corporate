@@ -1,13 +1,19 @@
 <template>
   <div class="item">
-    <div class="header">ああああ</div>
+    <div class="header">{{ item.url }}</div>
     <div class="content">
-      <p>名前</p>
+      <p>{{ item.name }}</p>
     </div>
   </div>
 </template>
 
-<style scoped>
+<script>
+export default {
+  props: ['item'] //プロパティを記述
+}
+</script>
+
+<style lang="scss" scoped>
 .header {
   background: #ccc;
   height: 300px;

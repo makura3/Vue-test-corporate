@@ -16,7 +16,10 @@ module.exports = {
   head: {
     title,
     meta,
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    bodyAttrs: {
+      class: 'body'
+    }
   },
   build: {
     extend(config, ctx) {
@@ -36,9 +39,11 @@ module.exports = {
       }
     }
   },
+  modules: [['nuxt-sass-resources-loader', ['@/assets/scss/variable.scss']]],
   css: [
     //cssがあればここに
-    'sanitize.css'
+    'sanitize.css',
+    '@/assets/scss/default.scss'
   ],
   plugins: [{ src: '~/plugins/firebaseInit' }]
 }

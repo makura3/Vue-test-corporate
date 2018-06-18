@@ -12,8 +12,10 @@
   </header>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .header-wrap {
+  background-color: $black;
+  color: $white;
   display: flex;
   justify-content: space-between;
   padding: 10px;

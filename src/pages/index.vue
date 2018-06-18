@@ -1,13 +1,8 @@
 <template>
   <div>
     <section class="item-wrap">
-      <!-- <Item />
-      <Item />
-      <Item /> -->
       <div v-for="(item, key, index) in items" :key="index">
-        <div>{{ item.url }}</div>
-        <h2>{{ item.name }}</h2>
-        <p>{{ item.description }}</p>
+        <Item :item="item" />
       </div>
     </section>
     <p>テンプレートの部分は別ファイルに切り出すことが可能です。</p>
@@ -47,8 +42,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .item-wrap {
   display: flex;
+  flex-wrap: wrap;
 }
 </style>

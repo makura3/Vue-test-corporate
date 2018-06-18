@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <Header />
 
     <nuxt/>
@@ -19,3 +19,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.wrapper {
+  background-color: $lightGray;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+</style>
