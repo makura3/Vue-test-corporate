@@ -1,11 +1,10 @@
 <template>
   <div>
-    <section class="item-wrap">
-      <div v-for="(item, key, index) in items" :key="index">
-        <Item :item="item" />
+    <section>
+      <div class="item-wrap">
+        <Item v-for="(item, key, index) in items" :key="index" :item="item" />
       </div>
     </section>
-    <p>テンプレートの部分は別ファイルに切り出すことが可能です。</p>
   </div>
 </template>
 
@@ -46,5 +45,6 @@ export default {
 .item-wrap {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 </style>
