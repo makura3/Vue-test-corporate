@@ -39,7 +39,10 @@ module.exports = {
       }
     }
   },
-  modules: [['nuxt-sass-resources-loader', ['@/assets/scss/variable.scss']]],
+  modules: [
+    ['nuxt-sass-resources-loader', ['@/assets/scss/variable.scss']],
+    ['@nuxtjs/font-awesome']
+  ],
   css: [
     //cssがあればここに
     'sanitize.css',

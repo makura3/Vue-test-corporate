@@ -1,11 +1,10 @@
 <template>
-  <div>
-    <section>
-      <div class="item-wrap">
-        <Item v-for="(item, key, index) in items" :key="index" :item="item" />
-      </div>
-    </section>
-  </div>
+  <section class="wrap">
+    <!-- <div v-if="loading" class="loading">読み込み中です</div> -->
+    <transition-group name="fade" tag="div" class="item-wrap">
+      <Item v-for="(item, index) in items" :key="index" :item="item" />
+    </transition-group>
+  </section>
 </template>
 
 <script>
@@ -27,15 +26,17 @@ export default {
     db.collection('items')
       .get()
       .then(querySnapshot => {
-        this.loading = false
         querySnapshot.forEach(doc => {
           let data = {
+            id: doc.id,
             url: doc.data().url,
             name: doc.data().name,
-            description: doc.data().description
+            description: doc.data().description,
+            favorite: doc.data().favorite
           }
           this.items.push(data)
         })
+        this.loading = false
       })
   }
 }
@@ -46,5 +47,22 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin: 35px 10px;
+}
+
+.item {
+  margin: 15px 5px;
+
+  @include min-mq(sm) {
+    margin: 15px 10px;
+  }
+}
+
+.fade-enter-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter {
+  opacity: 0;
 }
 </style>
