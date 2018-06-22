@@ -10,8 +10,7 @@ export default {
   props: ['id', 'flg'],
   methods: {
     add: function() {
-      return db
-        .collection('items')
+      db.collection('items')
         .doc(this.id)
         .set(
           {
@@ -19,9 +18,8 @@ export default {
           },
           { merge: true }
         )
-        .then(function() {
-          console.log('add!')
-        })
+        .then(function() {})
+      // this.setFlg(1)
     },
     del: function() {
       return db
@@ -34,8 +32,11 @@ export default {
           { merge: true }
         )
         .then(function() {
-          console.log('delete!')
+          // this.setFlg(0)
         })
+    },
+    setFlg(flg) {
+      this.flg = flg
     }
   }
 }

@@ -6,12 +6,26 @@
         <div class="images-wrap">
           <img :src='"/images/items/"+item.url' class="images"/>
         </div>
-        <p class="des">{{item.description}}</p>
+        <p v-html="item.description" class="des"></p>
       </div>
       <div class="action">
+        <div>
+          <span>3,000円</span>
+          <span>（税込）</span>
+        </div>
         <div class="btn-wrap">
           <Btn />
           <p>商品にお間違いがないかご確認ください。</p>
+        </div>
+        <div class="shop-text">
+          <p class="title">ショップからのお知らせ</p>
+          <p>
+            只今発送までお時間を頂いております。<br>
+            下記を目安にご注文ください。<br>
+            <br>
+            [アクセサリー]：ご注文頂いてから2週間ほどで発送<br>
+            [布製品]：ご注文頂いてから3週間ほどで発送
+          </p>
         </div>
       </div>
     </div>
@@ -70,13 +84,12 @@ export default {
   .title {
     font-size: 16px;
     font-weight: 600;
+    margin: 0 10px;
     max-width: 445px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
 
   .images-wrap {
+    margin: 15px 0;
     text-align: center;
 
     .images {
@@ -86,6 +99,7 @@ export default {
 
   .des {
     border-top: 1px solid $gray;
+    padding: 15px 10px;
   }
 }
 
@@ -99,17 +113,26 @@ export default {
 }
 
 .action {
-  // width: 100%;
-
   @include min-mq(sm) {
     margin: 0 0 0 10px;
   }
-}
 
-.btn-wrap {
-  background-color: $silver;
-  padding: 20px;
-  text-align: center;
+  .btn-wrap {
+    background-color: $silver;
+    margin: 0 0 20px 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .shop-text {
+    border: 1px solid $gray;
+    padding: 10px;
+
+    .title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
 }
 
 .fade-enter-active {
