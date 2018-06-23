@@ -2,6 +2,7 @@
   <section class="wrap">
     <div v-if="item" class="content-wrap">
       <div class="content">
+        <Tag />
         <h2 class="title">{{item.name}}</h2>
         <div class="images-wrap">
           <img :src='"/images/items/"+item.url' class="images"/>
@@ -39,10 +40,12 @@
 import db from '~/plugins/firebaseInit'
 
 import Btn from '~/components/button/button.vue'
+import Tag from '~/components/label/tag.vue'
 
 export default {
   components: {
-    Btn
+    Btn,
+    Tag
   },
   validate({ params }) {
     // 数値でなければならない
@@ -84,7 +87,6 @@ export default {
   .title {
     font-size: 16px;
     font-weight: 600;
-    margin: 0 10px;
     max-width: 445px;
   }
 
@@ -99,6 +101,7 @@ export default {
 
   .des {
     border-top: 1px solid $gray;
+    font-size: 14px;
     padding: 15px 10px;
   }
 }
