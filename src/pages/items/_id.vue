@@ -2,6 +2,11 @@
   <section class="wrap">
     <div v-if="item" class="content-wrap">
       <div class="content">
+        <div>
+          <nuxt-link :to="{ name:'index'}">ホーム</nuxt-link>
+          >
+          <span class="pan">{{item.name}}</span>
+        </div>
         <Tag />
         <h2 class="title">{{item.name}}</h2>
         <div class="images-wrap">
@@ -84,6 +89,15 @@ export default {
 }
 
 .content {
+  .pan {
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    max-width: 445px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .title {
     font-size: 16px;
     font-weight: 600;
