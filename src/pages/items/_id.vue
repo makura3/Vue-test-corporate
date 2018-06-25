@@ -72,8 +72,7 @@ export default {
           item: {
             url: doc.data().url,
             name: doc.data().name,
-            description: doc.data().description,
-            favorite: doc.data().favorite
+            description: doc.data().description
           }
         }
       })

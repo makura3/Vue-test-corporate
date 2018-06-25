@@ -5,7 +5,8 @@
       <div class="content">
         <p class="title">{{ item.name }}</p>
       </div>
-      <FavoriteIcon :id="item.id" :flg="item.favorite" />
+      <FavoriteIcon :id="item.id"/>
+      {{item.id}}
     </div>
   </nuxt-link>
 </template>

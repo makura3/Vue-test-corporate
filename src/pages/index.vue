@@ -1,15 +1,14 @@
 <template>
   <section class="wrap">
-    <!-- <div v-if="loading" class="loading">読み込み中です</div> -->
-    <transition-group name="fade" tag="div" class="item-wrap">
-      <Item v-for="(item, index) in items" :key="index" :item="item" />
-    </transition-group>
+    {{ $store.state }}
+    <!-- <transition-group name="fade" tag="div" class="item-wrap">
+      <p v-for="(item, index) in init" :key="index">{{item}}</p>
+      <Item v-for="(item, index) in init" :key="index" :item="item" />
+    </transition-group> -->
   </section>
 </template>
 
 <script>
-import db from '~/plugins/firebaseInit'
-
 import Item from '~/components/panel/Item.vue'
 
 export default {
@@ -18,27 +17,33 @@ export default {
   },
   data() {
     return {
-      items: [],
+      // itemList: [],
       loading: true
     }
   },
-  created() {
-    db.collection('items')
-      .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-          let data = {
-            id: doc.id,
-            url: doc.data().url,
-            name: doc.data().name,
-            description: doc.data().description,
-            favorite: doc.data().favorite
-          }
-          this.items.push(data)
-        })
-        this.loading = false
-      })
+  computed: {
+    init() {
+      console.log('init start!')
+      return this.$store.getters.getItems
+    }
   }
+  // created() {
+  //   db.collection('items')
+  //     .get()
+  //     .then(querySnapshot => {
+  //       querySnapshot.forEach(doc => {
+  //         let data = {
+  //           id: doc.id,
+  //           url: doc.data().url,
+  //           name: doc.data().name,
+  //           description: doc.data().description,
+  //           favorite: doc.data().favorite
+  //         }
+  //         this.itemList.push(data)
+  //       })
+  //       this.loading = false
+  //     })
+  // }
 }
 </script>
 

@@ -8,16 +8,27 @@ import db from '~/plugins/firebaseInit'
 
 export default {
   props: ['id', 'flg'],
+  created({ params }) {
+    console.log(params)
+    // asyncData({ params }) {
+    return db
+      .collection('favorite')
+      .doc(params.id)
+      .get()
+      .then(doc => {
+        console.log(doc.data().addFlg)
+        return {
+          flg: doc.data().addFlg
+        }
+      })
+  },
   methods: {
     add: function() {
       db.collection('items')
         .doc(this.id)
-        .set(
-          {
-            favorite: '1'
-          },
-          { merge: true }
-        )
+        .update({
+          favorite: '1'
+        })
         .then(function() {})
       // this.setFlg(1)
     },
@@ -25,12 +36,9 @@ export default {
       return db
         .collection('items')
         .doc(this.id)
-        .set(
-          {
-            favorite: '0'
-          },
-          { merge: true }
-        )
+        .update({
+          favorite: '0'
+        })
         .then(function() {
           // this.setFlg(0)
         })
