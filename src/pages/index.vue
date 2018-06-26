@@ -1,49 +1,42 @@
 <template>
   <section class="wrap">
-    {{ $store.state }}
-    <!-- <transition-group name="fade" tag="div" class="item-wrap">
-      <p v-for="(item, index) in init" :key="index">{{item}}</p>
+    <!-- {{ $store.state,itemList }} -->
+    <!-- {{loading}} -->
+    <p v-if="loading">ローディング</p>
+    <transition-group v-else name="fade" tag="div" class="item-wrap">
+      <!-- <p v-for="(item, index) in init" :key="index">{{item}}</p> -->
       <Item v-for="(item, index) in init" :key="index" :item="item" />
-    </transition-group> -->
+    </transition-group>
   </section>
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex'
 import Item from '~/components/panel/Item.vue'
 
 export default {
   components: {
     Item
   },
-  data() {
-    return {
-      // itemList: [],
-      loading: true
-    }
-  },
   computed: {
-    init() {
-      console.log('init start!')
-      return this.$store.getters.getItems
-    }
+    ...mapState({
+      loading: 'loading' //loadingというstateをloadingという名前で呼び出す
+    }),
+    ...mapGetters({
+      init: 'getItems' //getItemsというgetterをinitという名前で呼び出す
+    })
   }
-  // created() {
-  //   db.collection('items')
-  //     .get()
-  //     .then(querySnapshot => {
-  //       querySnapshot.forEach(doc => {
-  //         let data = {
-  //           id: doc.id,
-  //           url: doc.data().url,
-  //           name: doc.data().name,
-  //           description: doc.data().description,
-  //           favorite: doc.data().favorite
-  //         }
-  //         this.itemList.push(data)
-  //       })
-  //       this.loading = false
-  //     })
-  // }
+  // computed: mapState({
+  //   // アロー関数は、コードをとても簡潔にできます！
+  //   // count: state => state.count,
+  //   // 文字列を渡すことは、`state => state.count` と同じです
+  //   // countAlias: 'count',
+  //   // `this` からローカルステートを参照するときは、通常の関数を使わなければいけません
+  //   // loading: 'loading',
+  //   init() {
+  //     return this.$store.getters.getItems
+  //   }
+  // })
 }
 </script>
 

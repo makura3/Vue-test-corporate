@@ -52,10 +52,10 @@ export default {
     Btn,
     Tag
   },
-  validate({ params }) {
-    // 数値でなければならない
-    return /^[a-zA-Z0-9]+$/.test(params.id)
-  },
+  // validate({ params }) {
+  //   // 数値でなければならない
+  //   return /^[a-zA-Z0-9]+$/.test(params.id)
+  // },
   data() {
     return {
       item: [],
