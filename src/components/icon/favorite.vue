@@ -24,7 +24,7 @@ export default {
       // e.target.classList.add('hoge')
       console.log(e)
     },
-    delClass(id, e) {
+    delClass(id) {
       //データの更新
       this.del(id)
     }
