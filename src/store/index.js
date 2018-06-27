@@ -32,12 +32,25 @@ const store = () =>
       },
       [SEL_FAVORITE](state, data) {
         state.favoriteList = data
+      },
+      [ADD_FAVORITE](state, id) {
+        state.favoriteList.forEach(function(value, index) {
+          if (value.id === id) {
+            var list = state.favoriteList.concat()
+            list[index].favorite = true
+            state.favoriteList = list
+          }
+        })
+      },
+      [DEL_FAVORITE](state, id) {
+        state.favoriteList.forEach(function(value, index) {
+          if (value.id === id) {
+            var list = state.favoriteList.concat()
+            list[index].favorite = false
+            state.favoriteList = list
+          }
+        })
       }
-      // ,
-      // [ADD_FAVORITE](state) {
-      //   state.favoriteList.forEach(function(value, index, array) {
-      //   })
-      // }
     },
     actions: {
       [INIT]({ commit }) {
@@ -71,29 +84,24 @@ const store = () =>
         })
       },
       [ADD_FAVORITE]({ commit }, id) {
-        console.log('add_fav action start')
-        console.log(id)
         favRef
           .doc(id)
           .update({
             addFlg: true
           })
-          .then(function() {})
-        //必要ないけど一旦
-        commit('LOADING', false)
-        // commit('ADD_FAVORITE', id)
+          .then(function() {
+            commit('ADD_FAVORITE', id)
+          })
       },
       [DEL_FAVORITE]({ commit }, id) {
-        console.log('del_fav action start')
-        console.log(id)
         favRef
           .doc(id)
           .update({
             addFlg: false
           })
-          .then(function() {})
-        //必要ないけど一旦
-        commit('LOADING', false)
+          .then(function() {
+            commit('DEL_FAVORITE', id)
+          })
       }
     },
     getters: {

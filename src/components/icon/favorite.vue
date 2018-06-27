@@ -1,6 +1,6 @@
 <template>
-  <i v-if="getFavoriteData(id)" class="ic_heart fa fa-heart" @click.prevent="del(id)"></i>
-  <i v-else class="ic_heart fa fa-heart-o" @click.prevent="add(id)"></i>
+  <i v-if="getFavoriteData(id)" class="ic_heart fa fa-heart" @click.prevent="delClass(id, $event)"></i>
+  <i v-else class="ic_heart fa fa-heart-o" @click.prevent="addClass(id, $event)"></i>
 </template>
 
 <script>
@@ -18,8 +18,15 @@ export default {
       add: 'ADD_FAVORITE', // `this.add()` を `this.$store.dispatch('ADD_FAVORITE')` にマッピングする
       del: 'DEL_FAVORITE' // `this.del()` を `this.$store.dispatch('DEL_FAVORITE')` にマッピングする
     }),
-    setFlg(flg) {
-      this.flg = flg
+    addClass(id, e) {
+      //データの更新
+      this.add(id)
+      // e.target.classList.add('hoge')
+      console.log(e)
+    },
+    delClass(id, e) {
+      //データの更新
+      this.del(id)
     }
   }
 }
