@@ -1,48 +1,23 @@
 <template>
-  <i v-if="flg" class="ic_heart fa fa-heart" @click.prevent="add()"></i>
-  <i v-else class="ic_heart fa fa-heart-o" @click.prevent="del()"></i>
+  <i v-if="getFavoriteData(id)" class="ic_heart fa fa-heart" @click.prevent="del(id)"></i>
+  <i v-else class="ic_heart fa fa-heart" @click.prevent="add(id)"></i>
 </template>
 
 <script>
-import db from '~/plugins/firebaseInit'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
-  props: ['id', 'flg'],
-  created({ params }) {
-    console.log(params)
-    // asyncData({ params }) {
-    return db
-      .collection('favorite')
-      .doc(params.id)
-      .get()
-      .then(doc => {
-        console.log(doc.data().addFlg)
-        return {
-          flg: doc.data().addFlg
-        }
-      })
+  props: ['id'],
+  computed: {
+    ...mapGetters({
+      getFavoriteData: 'getFavoriteData'
+    })
   },
   methods: {
-    add: function() {
-      db.collection('items')
-        .doc(this.id)
-        .update({
-          favorite: '1'
-        })
-        .then(function() {})
-      // this.setFlg(1)
-    },
-    del: function() {
-      return db
-        .collection('items')
-        .doc(this.id)
-        .update({
-          favorite: '0'
-        })
-        .then(function() {
-          // this.setFlg(0)
-        })
-    },
+    ...mapActions({
+      add: 'ADD_FAVORITE', // `this.add()` を `this.$store.dispatch('ADD_FAVORITE')` にマッピングする
+      del: 'DEL_FAVORITE' // `this.del()` を `this.$store.dispatch('DEL_FAVORITE')` にマッピングする
+    }),
     setFlg(flg) {
       this.flg = flg
     }

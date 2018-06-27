@@ -1,5 +1,11 @@
 import Vuex from 'vuex'
-import { LOADING, INIT, SEL_FAVORITE } from './types'
+import {
+  LOADING,
+  INIT,
+  SEL_FAVORITE,
+  ADD_FAVORITE,
+  DEL_FAVORITE
+} from './types'
 import db from '~/plugins/firebaseInit'
 // dbはプラグイン化しました
 
@@ -53,37 +59,48 @@ const store = () =>
               }
               favList.push(data)
             })
-            console.log(favList)
             commit('SEL_FAVORITE', favList)
           })
           //loading finish
           commit('LOADING', false)
         })
+      },
+      [ADD_FAVORITE]({ commit }, id) {
+        console.log('add_fav action start')
+        console.log(id)
+        favRef
+          .doc(id)
+          .update({
+            addFlg: true
+          })
+          .then(function() {})
+        //必要ないけど一旦
+        commit('LOADING', false)
+      },
+      [DEL_FAVORITE]({ commit }, id) {
+        console.log('del_fav action start')
+        console.log(id)
+        favRef
+          .doc(id)
+          .update({
+            addFlg: false
+          })
+          .then(function() {})
+        //必要ないけど一旦
+        commit('LOADING', false)
       }
-      // ,
-      // [SEL_FAVORITE]({ commit }) {
-      //   console.log('sel_fav action start')
-      //   favRef.get().then(res => {
-      //     let list = []
-      //     res.forEach(doc => {
-      //       console.log(doc.data())
-      //       let data = {
-      //         id: doc.id,
-      //         favorite: doc.data().addFlg
-      //       }
-      //       list.push(data)
-      //     })
-      //     commit('SEL_FAVORITE', list)
-      //   })
-      // }
     },
     getters: {
-      getItems: state => state.itemList
+      getItems: state => {
+        return state.itemList
+      },
       //引数ありの場合
-      // getItems: state => h => {
-      //   console.log(h)
-      //   state.itemList
-      // }
+      getFavoriteData: state => id => {
+        let data = state.favoriteList.find(data => data.id === id)
+        if (data) {
+          return data['favorite']
+        }
+      }
     },
     plugins: [myPlugin]
   })
