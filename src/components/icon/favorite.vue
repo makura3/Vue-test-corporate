@@ -1,6 +1,6 @@
 <template>
   <i v-if="getFavoriteData(id)" class="ic_heart fa fa-heart" @click.prevent="del(id)"></i>
-  <i v-else class="ic_heart fa fa-heart" @click.prevent="add(id)"></i>
+  <i v-else class="ic_heart fa fa-heart-o" @click.prevent="add(id)"></i>
 </template>
 
 <script>

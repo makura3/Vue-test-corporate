@@ -1,14 +1,11 @@
 <template>
   <section class="wrap">
-    <!-- <div v-if="loading">
-      <i class="fa fa-spinner" aria-hidden="true"></i>
-    </div> -->
-    <div>
-      <i class="fa fa-spinner fa-3" aria-hidden="true"></i>
+    <div v-if="loading" class="loading">
+      <i class="fa fa-spinner fa-3x" aria-hidden="true"></i>
     </div>
-    <!-- <transition-group v-else name="fade" tag="div" class="item-wrap">
+    <transition-group v-else name="fade" tag="div" class="item-wrap">
       <Item v-for="(item, index) in init" :key="index" :item="item" />
-    </transition-group> -->
+    </transition-group>
   </section>
 </template>
 
@@ -43,18 +40,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.fa-spinner {
-  animation-name: rotation 3s linear;
+.loading {
+  align-items: center;
+  color: $gray;
+  display: flex;
+  flex-basis: auto;
+  height: 300px;
+  justify-content: center;
 }
-
-// @keyframes rotation {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
 
 .item-wrap {
   display: flex;

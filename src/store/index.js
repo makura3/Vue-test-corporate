@@ -33,6 +33,11 @@ const store = () =>
       [SEL_FAVORITE](state, data) {
         state.favoriteList = data
       }
+      // ,
+      // [ADD_FAVORITE](state) {
+      //   state.favoriteList.forEach(function(value, index, array) {
+      //   })
+      // }
     },
     actions: {
       [INIT]({ commit }) {
@@ -76,6 +81,7 @@ const store = () =>
           .then(function() {})
         //必要ないけど一旦
         commit('LOADING', false)
+        // commit('ADD_FAVORITE', id)
       },
       [DEL_FAVORITE]({ commit }, id) {
         console.log('del_fav action start')
