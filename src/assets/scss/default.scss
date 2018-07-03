@@ -10,13 +10,9 @@ body {
 .wrap {
   margin: 0 auto;
   width: 100%;
-
-  @include min-mq(md) {
-    width: 940px;
-  }
 }
 
-.fa-spinner {
+.fa-cog {
   animation: rotation 2s linear infinite;
 }
 

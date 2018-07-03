@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Header />
+    <!-- <Header /> -->
 
     <nuxt/>
 
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import Header from '~/components/header.vue'
+// import Header from '~/components/header.vue'
 import Footer from '~/components/footer.vue'
 
 export default {
   components: {
-    Header,
+    // Header,
     Footer
   }
 }
@@ -22,7 +22,6 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-  background-color: $lightGray;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
