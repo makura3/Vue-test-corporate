@@ -4,7 +4,14 @@
       <div v-if="loading" class="loading">
         <i class="fa fa-cog fa-3x" aria-hidden="true"></i>
       </div>
-      <p v-else>hello world!</p>
+      <div v-else>
+        <div class="menu">
+          <span class="menu-text">PROFILE</span>
+        </div>
+        <div class="menu">
+          <span class="menu-text">CONTACT</span>
+        </div>
+      </div>
     </section>
     <section class="wrap">
       ２Pめ
@@ -45,5 +52,21 @@ export default {
   background-color: $back-color;
   color: $white;
   height: 100vh;
+}
+
+.menu {
+  align-items: center;
+  background-color: $black;
+  border-radius: 75px;
+  cursor: pointer;
+  color: $white;
+  display: flex;
+  height: 150px;
+  justify-content: center;
+  width: 150px;
+
+  &:hover {
+    animation: menu 0.5s ease 1;
+  }
 }
 </style>

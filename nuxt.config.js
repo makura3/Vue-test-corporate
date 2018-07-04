@@ -46,7 +46,8 @@ module.exports = {
   css: [
     //cssがあればここに
     'sanitize.css',
-    '@/assets/scss/default.scss'
+    '@/assets/scss/default.scss',
+    '@/assets/scss/animation.scss'
   ],
   plugins: [{ src: '~/plugins/firebaseInit' }]
 }
