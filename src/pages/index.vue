@@ -14,7 +14,15 @@
       </div>
     </section>
     <section class="wrap">
-      ２Pめ
+      <div>
+        <div class="profile">
+          <div class="profile-img">ダミー写真</div>
+          <span class="profile-name">makura3</span>
+        </div>
+        <div class="profile">
+          <span>Front-end engineer</span>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -52,6 +60,7 @@ export default {
   background-color: $back-color;
   color: $white;
   height: 100vh;
+  padding: 0 20px;
 }
 
 .menu {
@@ -67,6 +76,28 @@ export default {
 
   &:hover {
     animation: menu 0.5s ease 1;
+  }
+}
+
+.profile {
+  position: relative;
+
+  .profile-img {
+    background-color: $gray;
+    height: 300px;
+    width: 200px;
+  }
+
+  .profile-name {
+    background-color: $back-color;
+    font: {
+      size: 24px;
+    }
+    display: inline-block;
+    left: 50%;
+    padding: 10px;
+    position: absolute;
+    top: 30px;
   }
 }
 </style>

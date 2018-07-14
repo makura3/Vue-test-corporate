@@ -7,6 +7,7 @@
     "scss/dollar-variable-colon-space-after": "always",
     "at-rule-no-unknown": [true, {
       "ignoreAtRules": ["function", "if", "each", "include", "mixin"]
-    }]
+    }],
+    "declaration-empty-line-before": [ "never" ]
   }
 }
