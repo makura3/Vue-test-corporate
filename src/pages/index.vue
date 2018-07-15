@@ -1,30 +1,32 @@
 <template>
   <div>
-    <section class="wrap">
-      <div v-if="loading" class="loading">
-        <i class="fa fa-cog fa-3x" aria-hidden="true"></i>
-      </div>
-      <div v-else>
-        <div class="menu">
-          <span class="menu-text">PROFILE</span>
+    <main>
+      <section class="wrap">
+        <div v-if="loading" class="loading">
+          <i class="fa fa-cog fa-3x" aria-hidden="true"></i>
         </div>
-        <div class="menu">
-          <span class="menu-text">CONTACT</span>
+        <div v-else>
+          <div class="menu">
+            <span class="menu-text">PROFILE</span>
+          </div>
+          <div class="menu">
+            <span class="menu-text">CONTACT</span>
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="wrap">
-      <div>
-        <div class="profile">
-          <div class="profile-img">ダミー写真</div>
-          <span class="profile-name">makura3</span>
-          <span class="detail-text">Front-end engineer</span>
+      </section>
+      <section class="wrap">
+        <div>
+          <div class="profile">
+            <div class="profile-img">ダミー写真</div>
+            <span class="profile-name">makura3</span>
+            <span class="detail-text">Front-end engineer</span>
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="wrap">
+      </section>
+      <section class="wrap">
 
-    </section>
+      </section>
+    </main>
   </div>
 </template>
 
