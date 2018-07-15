@@ -18,11 +18,12 @@
         <div class="profile">
           <div class="profile-img">ダミー写真</div>
           <span class="profile-name">makura3</span>
-        </div>
-        <div class="profile">
-          <span>Front-end engineer</span>
+          <span class="detail-text">Front-end engineer</span>
         </div>
       </div>
+    </section>
+    <section class="wrap">
+
     </section>
   </div>
 </template>
@@ -58,7 +59,7 @@ export default {
 
 .wrap {
   background-color: $back-color;
-  color: $white;
+  color: $black;
   height: 100vh;
   padding: 0 20px;
 }
@@ -94,10 +95,19 @@ export default {
       size: 24px;
     }
     display: inline-block;
-    left: 50%;
+    right: 10px;
     padding: 10px;
     position: absolute;
-    top: 30px;
+    top: 20%;
+  }
+
+  .detail-text {
+    background-color: $back-color;
+    bottom: 20%;
+    display: inline-block;
+    right: 10px;
+    padding: 10px;
+    position: absolute;
   }
 }
 </style>
