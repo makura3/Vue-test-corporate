@@ -1,9 +1,6 @@
 <template>
   <header class="header-wrap">
     <div>
-      左
-    </div>
-    <div>
       <nuxt-link :to="{ name:'index'}" class="link">
         <h1 class="site-title">まくらのカバー</h1>
       </nuxt-link >
@@ -16,8 +13,8 @@
 
 <style lang="scss" scoped>
 .header-wrap {
-  background-color: $black;
-  color: $white;
+  background-color: $white-shadow;
+  color: $black;
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -30,7 +27,7 @@
 
     &:active,
     &:visited {
-      color: $white;
+      color: $black;
     }
   }
 }

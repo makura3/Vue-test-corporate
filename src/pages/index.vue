@@ -2,17 +2,20 @@
   <div>
     <main>
       <section class="wrap">
-        <div v-if="loading" class="loading">
+        <!-- <div v-if="loading" class="loading">
           <i class="fa fa-cog fa-3x" aria-hidden="true"></i>
         </div>
-        <div v-else>
-          <div class="menu">
-            <span class="menu-text">PROFILE</span>
-          </div>
-          <div class="menu">
-            <span class="menu-text">CONTACT</span>
-          </div>
+        <div v-else> -->
+        <div class="menu">
+          <span class="menu-text">PROFILE</span>
         </div>
+        <div class="menu">
+          <span class="menu-text">CONTACT</span>
+        </div>
+        <div class="arrow-wrap">
+          <span class="arrow"></span>
+        </div>
+        <!-- </div> -->
       </section>
       <section class="wrap">
         <div>
@@ -64,6 +67,36 @@ export default {
   color: $black;
   height: 100vh;
   padding: 0 20px;
+  position: relative;
+}
+
+.arrow-wrap {
+  bottom: 100px;
+  left: 50%;
+  position: absolute;
+
+  .arrow {
+    position: relative;
+
+    &::before {
+      background-color: $black;
+      content: '';
+      height: 50px;
+      position: absolute;
+      width: 1px;
+    }
+
+    &::after {
+      border-bottom: 1px solid $black;
+      bottom: -44px;
+      content: '';
+      height: 30px;
+      left: -14px;
+      position: absolute;
+      transform: rotate(-45deg);
+      width: 30px;
+    }
+  }
 }
 
 .menu {
