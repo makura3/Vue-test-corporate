@@ -1,13 +1,17 @@
 <template>
   <header class="header-wrap">
-    <div>
-      <nuxt-link :to="{ name:'index'}" class="link">
-        <h1 class="site-title">まくらのカバー</h1>
-      </nuxt-link >
-    </div>
-    <div>
-      右
-    </div>
+      <div class="menu">
+        <i class="border"></i>
+        <span class="menu-text">MENU</span>
+      </div>
+      <div class="nav">
+        <nav>
+          <ul>
+            <li>profile</li>
+            <li>contact</li>
+          </ul>
+        </nav>
+      </div>
   </header>
 </template>
 
@@ -15,12 +19,54 @@
 .header-wrap {
   background-color: $white-shadow;
   color: $black;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
   position: sticky;
   top: 0;
   z-index: 1;
+
+  .menu {
+    right: 30px;
+    position: absolute;
+    top: 10px;
+
+    .border {
+      background: $black;
+      display: block;
+      height: 2px;
+      left: 5px;
+      position: relative;
+      transition: background 0.5s;
+      top: 14px;
+      width: 24px;
+
+      &::before,
+      &::after {
+        background: $black;
+        border-radius: 3px;
+        content: '';
+        display: block;
+        height: 2px;
+        position: absolute;
+        transform: rotate(0deg);
+        transition: all 0.3s !important;
+        width: 24px;
+      }
+
+      &::before {
+        transform: translateY(10px);
+      }
+
+      &::after {
+        transform: translateY(-10px);
+      }
+    }
+
+    .menu-text {
+      position: absolute;
+      left: -3px;
+      letter-spacing: 0.2em;
+      top: 35px;
+    }
+  }
 
   .link {
     text-decoration: none;
@@ -32,9 +78,9 @@
   }
 }
 
-.site-title {
-  font-size: 16px;
-  font-weight: 300;
-  margin: 0;
+.nav {
+  // background-color: #ccc;
+  // display: block;
+  display: none;
 }
 </style>

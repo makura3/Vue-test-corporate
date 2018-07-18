@@ -6,12 +6,6 @@
           <i class="fa fa-cog fa-3x" aria-hidden="true"></i>
         </div>
         <div v-else> -->
-        <div class="menu">
-          <span class="menu-text">PROFILE</span>
-        </div>
-        <div class="menu">
-          <span class="menu-text">CONTACT</span>
-        </div>
         <div class="arrow-wrap">
           <span class="arrow"></span>
         </div>
@@ -96,22 +90,6 @@ export default {
       transform: rotate(-45deg);
       width: 30px;
     }
-  }
-}
-
-.menu {
-  align-items: center;
-  background-color: $black;
-  border-radius: 75px;
-  cursor: pointer;
-  color: $white;
-  display: flex;
-  height: 150px;
-  justify-content: center;
-  width: 150px;
-
-  &:hover {
-    animation: menu 0.5s ease 1;
   }
 }
 
