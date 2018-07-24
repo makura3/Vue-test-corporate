@@ -1,7 +1,7 @@
 <template>
   <header class="header-wrap">
       <div class="menu">
-        <i class="border"></i>
+        <span class="border"></span>
         <span class="menu-text">MENU</span>
       </div>
       <div class="nav">

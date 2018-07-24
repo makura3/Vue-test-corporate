@@ -11,17 +11,25 @@
         </div>
         <!-- </div> -->
       </section>
-      <section class="wrap">
-        <div>
-          <div class="profile">
-            <div class="profile-img">ダミー写真</div>
-            <span class="profile-name">makura3</span>
-            <span class="detail-text">Front-end engineer</span>
-          </div>
+      <section class="wrap _center">
+        <div class="profile">
+          <div class="profile-img">ダミー写真</div>
+          <span class="profile-name">makura3</span>
+          <span class="detail-text">Front-end engineer</span>
         </div>
       </section>
-      <section class="wrap">
-
+      <section class="wrap _center">
+        <div>
+          <h2>CONTACT</h2>
+          <p>
+            <span class="fa fa-envelope" aria-hidden="true"></span>
+            <span>@@github.com</span>
+          </p>
+          <p>
+            <span class="fa fa-phone" aria-hidden="true"></span>
+            <span>XXX-XXXX-XXXX</span>
+          </p>
+        </div>
       </section>
     </main>
   </div>
@@ -57,14 +65,20 @@ export default {
 }
 
 .wrap {
-  background-color: $back-color;
   color: $black;
   height: 100vh;
-  padding: 0 20px;
+  padding: 0 30px;
   position: relative;
+
+  &._center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .arrow-wrap {
+  animation: nextArrow 2s linear infinite;
   bottom: 100px;
   left: 50%;
   position: absolute;
@@ -95,11 +109,12 @@ export default {
 
 .profile {
   position: relative;
+  width: 100%;
 
   .profile-img {
     background-color: $gray;
     height: 300px;
-    width: 200px;
+    width: 100%;
   }
 
   .profile-name {
@@ -108,7 +123,7 @@ export default {
       size: 24px;
     }
     display: inline-block;
-    right: 10px;
+    left: -20px;
     padding: 10px;
     position: absolute;
     top: 20%;
@@ -118,9 +133,14 @@ export default {
     background-color: $back-color;
     bottom: 20%;
     display: inline-block;
-    right: 10px;
+    right: -20px;
     padding: 10px;
     position: absolute;
   }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
 }
 </style>

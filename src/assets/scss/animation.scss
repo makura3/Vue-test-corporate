@@ -1,11 +1,17 @@
-@keyframes menu {
+@keyframes nextArrow {
   0% {
-    transform: scale(1);
+    bottom: 100px;
+  }
+  25% {
+    bottom: 110px;
   }
   50% {
-    transform: scale(1.1);
+    bottom: 100px;
+  }
+  75% {
+    bottom: 90px;
   }
   100% {
-    transform: scale(1);
+    bottom: 100px;
   }
 }
