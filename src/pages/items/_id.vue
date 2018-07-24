@@ -7,7 +7,7 @@
           >
           <span class="pan">{{item.name}}</span>
         </div>
-        <Tag />
+        <!-- <Tag /> -->
         <h2 class="title">{{item.name}}</h2>
         <div class="images-wrap">
           <img :src='"/images/items/"+item.url' class="images"/>
@@ -20,7 +20,7 @@
           <span>（税込）</span>
         </div>
         <div class="btn-wrap">
-          <Btn />
+          <!-- <Btn /> -->
           <p>商品にお間違いがないかご確認ください。</p>
         </div>
         <div class="shop-text">
@@ -44,14 +44,14 @@
 <script>
 import db from '~/plugins/firebaseInit'
 
-import Btn from '~/components/button/button.vue'
-import Tag from '~/components/label/tag.vue'
+// import Btn from '~/components/button/button.vue'
+// import Tag from '~/components/label/tag.vue'
 
 export default {
-  components: {
-    Btn,
-    Tag
-  },
+  // components: {
+  //   Btn,
+  //   Tag
+  // },
   // validate({ params }) {
   //   // 数値でなければならない
   //   return /^[a-zA-Z0-9]+$/.test(params.id)

@@ -10,6 +10,7 @@
           <span class="arrow"></span>
         </div>
         <!-- </div> -->
+        <nuxt-link :to="{ name:'skill'}">りんくかりおき</nuxt-link>
       </section>
       <section class="wrap _center">
         <div class="profile">
@@ -36,21 +37,20 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
-// import Item from '~/components/panel/Item.vue'
+// import { mapState, mapGetters } from 'vuex'
 
 export default {
   // components: {
-  //   Item
+  //   Tree
   // },
-  computed: {
-    ...mapState({
-      loading: 'loading' //loadingというstateをloadingという名前で呼び出す
-    }),
-    ...mapGetters({
-      init: 'getItems' //getItemsというgetterをinitという名前で呼び出す
-    })
-  }
+  // computed: {
+  //   ...mapState({
+  //     loading: 'loading' //loadingというstateをloadingという名前で呼び出す
+  //   }),
+  //   ...mapGetters({
+  //     init: 'getItems' //getItemsというgetterをinitという名前で呼び出す
+  //   })
+  // }
 }
 </script>
 
