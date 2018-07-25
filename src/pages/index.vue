@@ -10,7 +10,6 @@
           <span class="arrow"></span>
         </div>
         <!-- </div> -->
-        <nuxt-link :to="{ name:'skill'}">りんくかりおき</nuxt-link>
       </section>
       <section class="wrap _center">
         <div class="profile">
@@ -18,6 +17,9 @@
           <span class="profile-name">makura3</span>
           <span class="detail-text">Front-end engineer</span>
         </div>
+      </section>
+      <section class="wrap _center">
+        <Tree />
       </section>
       <section class="wrap _center">
         <div>
@@ -38,11 +40,12 @@
 
 <script>
 // import { mapState, mapGetters } from 'vuex'
+import Tree from '~/components/object/tree.vue'
 
 export default {
-  // components: {
-  //   Tree
-  // },
+  components: {
+    Tree
+  }
   // computed: {
   //   ...mapState({
   //     loading: 'loading' //loadingというstateをloadingという名前で呼び出す
