@@ -18,7 +18,7 @@
           <span class="detail-text">Front-end engineer</span>
         </div>
       </section>
-      <section class="wrap _center">
+      <section class="wrap _wide _center">
         <Tree />
       </section>
       <section class="wrap _center">
@@ -72,6 +72,10 @@ export default {
   height: 100vh;
   padding: 0 30px;
   position: relative;
+
+  &._wide {
+    padding: 0;
+  }
 
   &._center {
     align-items: center;
