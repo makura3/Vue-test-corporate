@@ -22,6 +22,7 @@ module.exports = {
     }
   },
   build: {
+    vendor: ['~/assets/js/canvas.js'],
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
