@@ -109,20 +109,20 @@ export default {
       height: 200px;
       left: -64px;
       position: absolute;
-      top: -100px;
+      top: -90px;
       z-index: -1;
       width: 200px;
     }
 
     &::after {
-      animation: rotation 6000ms infinite linear;
+      animation: rotation_s 5000ms infinite linear;
       background: linear-gradient(to top, rgba(#0af, 0.8), rgba($v, 0.3));
       border-radius: 50px;
       content: '';
       height: 210px;
       left: -64px;
       position: absolute;
-      top: -100px;
+      top: -90px;
       z-index: -2;
       width: 210px;
     }
