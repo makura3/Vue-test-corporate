@@ -1,11 +1,14 @@
 <template>
   <div>
     <main>
-      <section class="wrap">
+      <section class="wrap _wide back_cat">
         <!-- <div v-if="loading" class="loading">
           <i class="fa fa-cog fa-3x" aria-hidden="true"></i>
         </div>
         <div v-else> -->
+        <div class="top-text">
+          <span class="text">Hello.</span>
+        </div>
         <div class="arrow-wrap">
           <span class="arrow"></span>
         </div>
@@ -83,6 +86,52 @@ export default {
     justify-content: center;
   }
 }
+
+.top-text {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+
+  .text {
+    color: $white;
+    font: {
+      size: 20px;
+    }
+    position: relative;
+
+    &::before {
+      animation: rotation 5000ms infinite linear;
+      background: linear-gradient(to bottom, rgba(#e8a, 0.8), rgba($y, 0.3));
+      border-radius: 50px;
+      content: '';
+      height: 200px;
+      left: -64px;
+      position: absolute;
+      top: -100px;
+      z-index: -1;
+      width: 200px;
+    }
+
+    &::after {
+      animation: rotation 6000ms infinite linear;
+      background: linear-gradient(to top, rgba(#0af, 0.8), rgba($v, 0.3));
+      border-radius: 50px;
+      content: '';
+      height: 210px;
+      left: -64px;
+      position: absolute;
+      top: -100px;
+      z-index: -2;
+      width: 210px;
+    }
+  }
+}
+
+// .back_cat {
+//   background: url('/images/cat.jpg') bottom 0 left 0/100% no-repeat;
+// }
 
 .arrow-wrap {
   animation: nextArrow 2s linear infinite;

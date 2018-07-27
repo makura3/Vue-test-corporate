@@ -1,29 +1,63 @@
+'use strict'
+
 // EaselJS系の読み込み
 import { Shape, Stage } from '@createjs/easeljs/dist/easeljs.module'
 // TweenJS系の読み込み
 import { Tween } from '@createjs/tweenjs/dist/tweenjs.module'
 
-const stage = new Stage('canvas')
+class setCanvas {
+  constructor() {
+    this.stage = new Stage('canvas')
+    this.shape = new Shape()
+    this.setCanvasSize()
+  }
 
-const target = new Shape()
-target.graphics.beginFill('#333')
-target.graphics.drawPolyStar(0, 0, 20, 3)
-stage.addChild(target)
+  setCanvasSize() {
+    const w = this.getScreenWidth().toString(),
+      h = this.getScreenHeight().toString()
 
-target.x = 100
-target.y = 100
+    let canvas = document.querySelector('#canvas')
+    canvas.setAttribute('width', w + 'px')
+    canvas.setAttribute('height', h + 'px')
+  }
 
-Tween.get(target, { loop: true })
-  .wait(300)
-  .to({ x: 740, y: 400, scale: 2 }, 700)
-  .to({ x: 400, y: 0, scale: 1.4 }, 1200)
-  .to({ x: 500, y: 300, scale: 3 }, 1200)
-  .to({ x: 100, y: 100, scale: 1 }, 700)
+  getScreenWidth() {
+    return window.parent.screen.width
+  }
 
-update()
+  getScreenHeight() {
+    return window.parent.screen.height
+  }
 
-// 毎フレームステージを自動更新する
-function update() {
-  stage.update()
-  requestAnimationFrame(() => update())
+  event_set_handler() {
+    // wip
+  }
+
+  pathRender(x) {
+    for (let i = 0; i < x; i++) {
+      this.shape.graphics.beginFill('Gainsboro') // 赤色で描画するように設定
+      this.shape.graphics.drawCircle(
+        Math.random() * 350,
+        Math.random() * 300,
+        Math.random() * 15
+      ) //半径100pxの円を描画
+      this.stage.addChild(this.shape) // 表示リストに追加
+      this.setAnimation()
+    }
+  }
+
+  setAnimation() {
+    Tween.get(this.shape, { loop: true })
+      .to({ scaleX: 1.1, scaleY: 1.1 }, 500)
+      .to({ scaleX: 1, scaleY: 1 }, 500)
+    this.update()
+  }
+
+  update() {
+    this.stage.update()
+    requestAnimationFrame(() => this.update())
+  }
 }
+
+let _s = new setCanvas()
+_s.pathRender(200)
