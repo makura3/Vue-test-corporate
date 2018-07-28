@@ -15,11 +15,20 @@
         <!-- </div> -->
       </section>
       <section class="wrap _center">
-        <div class="profile">
-          <img src="~assets/images/icon.png">
-          <div class="profile-img">ダミー写真</div>
-          <span class="profile-name">makura3</span>
-          <span class="detail-text">Front-end engineer</span>
+        <div>
+          <h2>About</h2>
+          <p>
+            普段は色々なWebサイトの実装を担当させて頂いております。<br>
+            猫が好きで飼いはじめたところ、パフォーマンスが上がりました。本当です。
+          </p>
+          <hr>
+          <p>
+            2013年からITの会社にてサーバーサイド側の実装などの業務を行う。<br>
+            2016年以降は今までの経験を活かしつつフロントエンド側の業務を行う。
+          </p>
+          <p>
+            問い合わせ先：@@github.com
+          </p>
         </div>
       </section>
       <section class="wrap _wide _center">
@@ -29,12 +38,10 @@
         <div>
           <h2>CONTACT</h2>
           <p>
-            <span class="fa fa-envelope" aria-hidden="true"></span>
-            <span>@@github.com</span>
+            何かありましたら下記までご連絡ください。
           </p>
           <p>
-            <span class="fa fa-phone" aria-hidden="true"></span>
-            <span>XXX-XXXX-XXXX</span>
+            問い合わせ先：@@github.com<br>
           </p>
         </div>
       </section>
@@ -114,23 +121,19 @@ export default {
     }
 
     &::before {
-      animation: rotation 5000ms infinite linear;
+      animation: rotation 8s infinite linear;
       background: linear-gradient(to bottom, rgba(#e8a, 0.5), rgba($y, 0.5));
       z-index: -1;
     }
 
     &::after {
-      animation: rotation_s 5000ms infinite linear;
+      animation: rotation_s 8s infinite linear;
       background: linear-gradient(to top, rgba(#0af, 0.5), rgba($v, 0.3));
       box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
       z-index: -2;
     }
   }
 }
-
-// .back_cat {
-//   background: url('/images/cat.jpg') bottom 0 left 0/100% no-repeat;
-// }
 
 .arrow-wrap {
   animation: nextArrow 2s linear infinite;
