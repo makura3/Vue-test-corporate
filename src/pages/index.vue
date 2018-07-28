@@ -16,6 +16,7 @@
       </section>
       <section class="wrap _center">
         <div class="profile">
+          <img src="~assets/images/icon.png">
           <div class="profile-img">ダミー写真</div>
           <span class="profile-name">makura3</span>
           <span class="detail-text">Front-end engineer</span>
@@ -101,30 +102,28 @@ export default {
     }
     position: relative;
 
-    &::before {
-      animation: rotation 5000ms infinite linear;
-      background: linear-gradient(to bottom, rgba(#e8a, 0.8), rgba($y, 0.3));
+    &::before,
+    &::after {
       border-radius: 50px;
       content: '';
       height: 200px;
       left: -64px;
       position: absolute;
       top: -90px;
-      z-index: -1;
       width: 200px;
+    }
+
+    &::before {
+      animation: rotation 5000ms infinite linear;
+      background: linear-gradient(to bottom, rgba(#e8a, 0.5), rgba($y, 0.5));
+      z-index: -1;
     }
 
     &::after {
       animation: rotation_s 5000ms infinite linear;
-      background: linear-gradient(to top, rgba(#0af, 0.8), rgba($v, 0.3));
-      border-radius: 50px;
-      content: '';
-      height: 210px;
-      left: -64px;
-      position: absolute;
-      top: -90px;
+      background: linear-gradient(to top, rgba(#0af, 0.5), rgba($v, 0.3));
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
       z-index: -2;
-      width: 210px;
     }
   }
 }

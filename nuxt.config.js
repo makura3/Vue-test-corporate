@@ -37,6 +37,22 @@ module.exports = {
             files: ['**/*.vue']
           })
         )
+        config.module.rules.push({
+          test: /\.(png|jpe?g|gif|svg)$/,
+          loader: 'url-loader',
+          query: {
+            limit: 1000, // 1kB
+            name: 'img/[name].[hash:7].[ext]'
+          }
+        })
+        config.module.rules.push({
+          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+          loader: 'url-loader',
+          query: {
+            limit: 1000, // 1kB
+            name: 'fonts/[name].[hash:7].[ext]'
+          }
+        })
       }
     }
   },
