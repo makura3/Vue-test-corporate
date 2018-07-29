@@ -14,7 +14,7 @@
         </div>
         <!-- </div> -->
       </section>
-      <section class="wrap _center">
+      <section class="wrap _center bg-gra_one">
         <div>
           <h2>About</h2>
           <p>
@@ -69,15 +69,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.loading {
-  align-items: center;
-  color: $gray;
-  display: flex;
-  flex-basis: auto;
-  height: 300px;
-  justify-content: center;
-}
-
 .wrap {
   color: $black;
   height: 100vh;
@@ -92,6 +83,11 @@ export default {
     align-items: center;
     display: flex;
     justify-content: center;
+  }
+
+  &.bg-gra_one {
+    background: linear-gradient(to bottom, rgba(#e8a, 0.5), rgba($y, 0.5));
+    height: 100vh;
   }
 }
 
@@ -108,6 +104,13 @@ export default {
       size: 20px;
     }
     position: relative;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+    @include min-mq(sm) {
+      font: {
+        size: 64px;
+      }
+    }
 
     &::before,
     &::after {
@@ -118,6 +121,13 @@ export default {
       position: absolute;
       top: -90px;
       width: 200px;
+
+      @include min-mq(sm) {
+        height: 400px;
+        left: -125px;
+        top: -170px;
+        width: 400px;
+      }
     }
 
     &::before {
@@ -129,7 +139,7 @@ export default {
     &::after {
       animation: rotation_s 8s infinite linear;
       background: linear-gradient(to top, rgba(#0af, 0.5), rgba($v, 0.3));
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
       z-index: -2;
     }
   }
