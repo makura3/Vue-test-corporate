@@ -10,12 +10,12 @@
           <span class="text">Hello.</span>
         </div>
         <div class="arrow-wrap">
-          <span class="arrow"></span>
+          <span class="arrow">scroll</span>
         </div>
         <!-- </div> -->
       </section>
       <section class="wrap _center bg-gra_one">
-        <div>
+        <div class="content">
           <h2>About</h2>
           <p>
             普段は色々なWebサイトの実装を担当させて頂いております。<br>
@@ -31,11 +31,24 @@
           </p>
         </div>
       </section>
+
+      <section class="wrap _wide _center">
+        <div class="content">
+          <h2>Skill</h2>
+          <ul>
+            <li>
+              <div>HTML5</div>
+              <div>------</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section class="wrap _wide _center">
         <Tree />
       </section>
       <section class="wrap _center">
-        <div>
+        <div class="content">
           <h2>CONTACT</h2>
           <p>
             何かありましたら下記までご連絡ください。
@@ -88,6 +101,14 @@ export default {
   &.bg-gra_one {
     background: linear-gradient(to bottom, rgba(#e8a, 0.5), rgba($y, 0.5));
     height: 100vh;
+  }
+
+  .content {
+    width: 200px;
+
+    @include min-mq(sm) {
+      width: 520px;
+    }
   }
 }
 
@@ -147,8 +168,9 @@ export default {
 
 .arrow-wrap {
   animation: nextArrow 2s linear infinite;
-  bottom: 100px;
+  bottom: 0;
   left: 50%;
+  margin-left: -25px;
   position: absolute;
 
   .arrow {
@@ -157,20 +179,24 @@ export default {
     &::before {
       background-color: $black;
       content: '';
-      height: 50px;
+      height: 30px;
+      left: 50%;
       position: absolute;
+      top: -40px;
       width: 1px;
+      z-index: 1;
     }
 
     &::after {
-      border-bottom: 1px solid $black;
-      bottom: -44px;
+      background-color: $y;
+      bottom: 25px;
       content: '';
-      height: 30px;
-      left: -14px;
+      height: 16px;
+      left: 50%;
+      margin-left: -8px;
       position: absolute;
       transform: rotate(-45deg);
-      width: 30px;
+      width: 16px;
     }
   }
 }
