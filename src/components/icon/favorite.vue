@@ -18,11 +18,10 @@ export default {
       add: 'ADD_FAVORITE', // `this.add()` を `this.$store.dispatch('ADD_FAVORITE')` にマッピングする
       del: 'DEL_FAVORITE' // `this.del()` を `this.$store.dispatch('DEL_FAVORITE')` にマッピングする
     }),
-    addClass(id, e) {
+    addClass(id) {
       //データの更新
       this.add(id)
       // e.target.classList.add('hoge')
-      console.log(e)
     },
     delClass(id) {
       //データの更新

@@ -36,17 +36,26 @@
         <div class="content">
           <h2>Skill</h2>
           <ul>
-            <li>
-              <div>HTML5</div>
-              <div>------</div>
+            <li class="bar">
+              <div class="label">HTML</div>
+              <div class="content">----------</div>
+            </li>
+            <li class="bar">
+              <div class="label">CSS</div>
+              <div class="content">-----</div>
+            </li>
+            <li class="bar">
+              <div class="label">JavaScript</div>
+              <div class="content">-----</div>
+            </li>
+            <li class="bar">
+              <div class="label">aaaaaaaaaaaaaa</div>
+              <div class="content">-----</div>
             </li>
           </ul>
         </div>
       </section>
 
-      <section class="wrap _wide _center">
-        <Tree />
-      </section>
       <section class="wrap _center">
         <div class="content">
           <h2>CONTACT</h2>
@@ -64,12 +73,10 @@
 
 <script>
 // import { mapState, mapGetters } from 'vuex'
-import Tree from '~/components/object/tree.vue'
 
 export default {
-  components: {
-    Tree
-  }
+  // components: {
+  // }
   // computed: {
   //   ...mapState({
   //     loading: 'loading' //loadingというstateをloadingという名前で呼び出す
@@ -167,8 +174,7 @@ export default {
 }
 
 .arrow-wrap {
-  animation: nextArrow 2s linear infinite;
-  bottom: 0;
+  bottom: 30px;
   left: 50%;
   margin-left: -25px;
   position: absolute;
@@ -191,45 +197,39 @@ export default {
       background-color: $y;
       bottom: 25px;
       content: '';
-      height: 16px;
+      height: 17px;
       left: 50%;
       margin-left: -8px;
       position: absolute;
       transform: rotate(-45deg);
-      width: 16px;
+      width: 17px;
     }
   }
 }
 
-.profile {
-  position: relative;
-  width: 100%;
+.bar {
+  display: flex;
 
-  .profile-img {
-    background-color: $gray;
-    height: 300px;
-    width: 100%;
-  }
+  .label {
+    padding: 10px 10px 10px 0;
+    position: relative;
+    width: 200px;
+    word-break: break-all;
 
-  .profile-name {
-    background-color: $back-color;
-    font: {
-      size: 24px;
+    &::after {
+      border-right: 2px solid $black;
+      bottom: 0;
+      content: '';
+      height: 110%;
+      right: 0;
+      position: absolute;
+      top: 0;
+      width: 2px;
     }
-    display: inline-block;
-    left: -20px;
-    padding: 10px;
-    position: absolute;
-    top: 20%;
   }
 
-  .detail-text {
-    background-color: $back-color;
-    bottom: 20%;
-    display: inline-block;
-    right: -20px;
-    padding: 10px;
-    position: absolute;
+  .content {
+    padding: 10px 0;
   }
 }
 
