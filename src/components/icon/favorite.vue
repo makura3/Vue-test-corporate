@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 .ic_heart {
-  color: $favorite;
+  // color: $favorite;
   font-weight: 600;
   vertical-align: 0;
 }

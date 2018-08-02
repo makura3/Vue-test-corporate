@@ -18,6 +18,14 @@ h2 {
   font-size: 24px;
 }
 
+a {
+  &:link,
+  &:visited,
+  &:active {
+    color: $link;
+  }
+}
+
 hr {
   border: none;
   border-top: 1px solid $black;

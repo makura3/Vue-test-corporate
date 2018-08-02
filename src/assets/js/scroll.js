@@ -8,6 +8,10 @@ class scrollAnimation {
 
   setAnimation() {
     console.log('aaaa')
+    // let $lists = document.querySelector('.jsShowScroll'),
+    //   $window = window,
+    //   windowHight = $window.parent.screen.height,
+    //   topWindow = $window.scrollTop()
   }
 }
 
