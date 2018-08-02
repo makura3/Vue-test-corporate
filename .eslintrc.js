@@ -18,6 +18,7 @@ module.exports = {
   plugins: ['vue'],
   // ここにカスタムルールを追加します。
   rules: {
+    "no-console": "off",
     'prettier/prettier': [
       'error',
       {

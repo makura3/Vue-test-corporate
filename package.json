@@ -20,14 +20,11 @@
   },
   "homepage": "https://github.com/makura3/Vue-test-corporate#readme",
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/font-awesome": "^1.0.3",
-    "firebase": "^4.12.1",
+    "firebase": "^4.13.1",
     "nuxt": "^1.4.0"
   },
   "devDependencies": {
-    "@createjs/easeljs": "^2.0.0-beta.2",
-    "@createjs/tweenjs": "^2.0.0-beta.1",
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",

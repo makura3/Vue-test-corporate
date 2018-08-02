@@ -1,58 +1,43 @@
 <template>
   <div>
-    <main>
+    <main v-if="loading">
+      <div class="loading">
+        ローディング
+        <!-- <i class="fa fa-cog fa-3x" aria-hidden="true"></i> -->
+      </div>
+    </main>
+    <main v-else>
       <section class="wrap _wide back_cat">
-        <!-- <div v-if="loading" class="loading">
-          <i class="fa fa-cog fa-3x" aria-hidden="true"></i>
-        </div>
-        <div v-else> -->
         <div class="top-text">
           <span class="text">Hello.</span>
         </div>
         <div class="arrow-wrap">
           <span class="arrow">scroll</span>
         </div>
-        <!-- </div> -->
       </section>
       <section class="wrap _center bg-gra_one">
         <div class="content">
           <h2>About</h2>
           <p>
             普段は色々なWebサイトの実装を担当させて頂いております。<br>
+            一人で作業するのではなく、色々な方とUI/UXについて意見を出し合い、協力して進めていることが多いです。<br>
             猫が好きで飼いはじめたところ、パフォーマンスが上がりました。本当です。
+          </p>
+          <p>
+            技術ブログやってます：<a href="https://makura3.github.io/" target="_blank">MOJIの本棚</a>
           </p>
           <hr>
           <p>
             2013年からITの会社にてサーバーサイド側の実装などの業務を行う。<br>
             2016年以降は今までの経験を活かしつつフロントエンド側の業務を行う。
           </p>
-          <p>
-            問い合わせ先：@@github.com
-          </p>
         </div>
       </section>
 
-      <section class="wrap _wide _center">
+      <section class="wrap _center">
         <div class="content">
           <h2>Skill</h2>
-          <ul>
-            <li class="bar">
-              <div class="label">HTML</div>
-              <div class="content">----------</div>
-            </li>
-            <li class="bar">
-              <div class="label">CSS</div>
-              <div class="content">-----</div>
-            </li>
-            <li class="bar">
-              <div class="label">JavaScript</div>
-              <div class="content">-----</div>
-            </li>
-            <li class="bar">
-              <div class="label">aaaaaaaaaaaaaa</div>
-              <div class="content">-----</div>
-            </li>
-          </ul>
+          <Bar />
         </div>
       </section>
 
@@ -72,53 +57,22 @@
 </template>
 
 <script>
-// import { mapState, mapGetters } from 'vuex'
+import { mapState } from 'vuex'
+import Bar from '~/components/object/bar.vue'
 
 export default {
-  // components: {
-  // }
-  // computed: {
-  //   ...mapState({
-  //     loading: 'loading' //loadingというstateをloadingという名前で呼び出す
-  //   }),
-  //   ...mapGetters({
-  //     init: 'getItems' //getItemsというgetterをinitという名前で呼び出す
-  //   })
-  // }
+  components: {
+    Bar
+  },
+  computed: {
+    ...mapState({
+      loading: 'loading'
+    })
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.wrap {
-  color: $black;
-  height: 100vh;
-  padding: 0 30px;
-  position: relative;
-
-  &._wide {
-    padding: 0;
-  }
-
-  &._center {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
-
-  &.bg-gra_one {
-    background: linear-gradient(to bottom, rgba(#e8a, 0.5), rgba($y, 0.5));
-    height: 100vh;
-  }
-
-  .content {
-    width: 200px;
-
-    @include min-mq(sm) {
-      width: 520px;
-    }
-  }
-}
-
 .top-text {
   align-items: center;
   display: flex;
@@ -205,36 +159,5 @@ export default {
       width: 17px;
     }
   }
-}
-
-.bar {
-  display: flex;
-
-  .label {
-    padding: 10px 10px 10px 0;
-    position: relative;
-    width: 200px;
-    word-break: break-all;
-
-    &::after {
-      border-right: 2px solid $black;
-      bottom: 0;
-      content: '';
-      height: 110%;
-      right: 0;
-      position: absolute;
-      top: 0;
-      width: 2px;
-    }
-  }
-
-  .content {
-    padding: 10px 0;
-  }
-}
-
-.list {
-  display: flex;
-  flex-direction: column;
 }
 </style>

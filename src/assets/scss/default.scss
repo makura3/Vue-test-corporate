@@ -1,6 +1,6 @@
 // 全ページで共通化したいスタイルはここ。
 * {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 body {
@@ -25,4 +25,32 @@ hr {
 
 ul {
   padding: 0;
+}
+
+.wrap {
+  color: $black;
+  height: 100vh;
+  padding: 0 30px;
+  position: relative;
+
+  &._wide {
+    padding: 0;
+  }
+
+  &._center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  &.bg-gra_one {
+    background: linear-gradient(to bottom, rgba(#e8a, 0.5), rgba($y, 0.5));
+    height: 100vh;
+  }
+
+  .content {
+    @include min-mq(sm) {
+      width: 600px;
+    }
+  }
 }

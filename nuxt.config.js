@@ -22,7 +22,7 @@ module.exports = {
     }
   },
   build: {
-    // vendor: ['~/assets/js/'], js読み込みが必要であればここ
+    vendor: ['~/assets/js/scroll.js'],
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
