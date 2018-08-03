@@ -16,7 +16,7 @@
         </div>
       </section>
       <section class="wrap _center bg-gra_one">
-        <div class="content">
+        <div class="content jsShowScroll">
           <h2>About</h2>
           <p>
             普段は色々なWebサイトの実装を担当させて頂いております。<br>
@@ -68,6 +68,16 @@ export default {
     ...mapState({
       loading: 'loading'
     })
+  },
+  methods: {
+    setAnimation: function() {
+      // let _s = new scrollAnimation() // eslint-disable-line
+      // _s.setAnimation()
+    }
+  },
+  beforeMount() {
+    console.log(hoge) // eslint-disable-line
+    this.setAnimation()
   }
 }
 </script>
