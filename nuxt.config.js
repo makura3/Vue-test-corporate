@@ -22,7 +22,8 @@ module.exports = {
     }
   },
   build: {
-    vendor: ['~/assets/js/scroll.js'],
+    // vendor: ['~/assets/js/scroll.js'],
+    // vendor: ['scrollAnimation'],
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
@@ -66,5 +67,9 @@ module.exports = {
     '@/assets/scss/default.scss',
     '@/assets/scss/animation.scss'
   ],
-  plugins: [{ src: '~/plugins/firebaseInit' }]
+  // plugins: [{ src: '~/plugins/firebaseInit' }]
+  plugins: [
+    { src: '~/plugins/firebaseInit', ssr: false },
+    { src: '~/plugins/scrollAnimation', ssr: false }
+  ]
 }

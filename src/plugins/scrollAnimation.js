@@ -1,19 +1,17 @@
 'use strict'
 
 /* スクロールアニメーション定義 */
-class scrollAnimation {
+export class scrollAnimation {
   constructor() {
     //初期処理何かあれば
+    // this.setAnimation()
   }
 
   setAnimation() {
-    console.log('aaaa')
+    console.log('js gogo!')
     // let $lists = document.querySelector('.jsShowScroll'),
     //   $window = window,
     //   windowHight = $window.parent.screen.height,
     //   topWindow = $window.scrollTop()
   }
 }
-
-let _s = new scrollAnimation()
-_s.setAnimation()

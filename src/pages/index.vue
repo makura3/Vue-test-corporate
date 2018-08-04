@@ -59,6 +59,7 @@
 <script>
 import { mapState } from 'vuex'
 import Bar from '~/components/object/bar.vue'
+import { scrollAnimation } from '~/plugins/scrollAnimation'
 
 export default {
   components: {
@@ -69,15 +70,11 @@ export default {
       loading: 'loading'
     })
   },
-  methods: {
-    setAnimation: function() {
-      // let _s = new scrollAnimation() // eslint-disable-line
-      // _s.setAnimation()
-    }
-  },
-  beforeMount() {
-    console.log(hoge) // eslint-disable-line
-    this.setAnimation()
+  mounted() {
+    this.$nextTick(function() {
+      let _s = new scrollAnimation()
+      _s.setAnimation()
+    })
   }
 }
 </script>
