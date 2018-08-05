@@ -3,7 +3,7 @@ import { LOADING, INIT } from './types'
 import db from '~/plugins/firebaseInit'
 // dbはプラグイン化しました
 
-const skillRef = db.collection('skill')
+const skillRef = db.collection('skills')
 
 const myPlugin = store => store.dispatch(INIT)
 
@@ -11,41 +11,45 @@ const store = () =>
   new Vuex.Store({
     state: {
       loading: true,
-      skillList: []
+      frontData: [],
+      serverData: []
     },
     mutations: {
       [LOADING](state, isLoading) {
         state.loading = isLoading
       },
       [INIT](state, data) {
-        state.skillList = data
+        state.frontData = data
       }
     },
     actions: {
       [INIT]({ commit }) {
         commit('LOADING', true)
 
-        skillRef.get().then(res => {
-          let list = []
-          res.forEach(doc => {
-            let data = {
-              id: doc.id,
-              name: doc.data().name,
-              color: doc.data().color,
-              ratio: doc.data().ratio
-            }
-            list.push(data)
-          })
-          commit('INIT', list)
+        skillRef
+          .orderBy('name')
+          .get()
+          .then(res => {
+            let list = []
+            res.forEach(doc => {
+              let data = {
+                id: doc.id,
+                name: doc.data().name,
+                color: doc.data().color,
+                ratio: doc.data().ratio
+              }
+              list.push(data)
+            })
+            commit('INIT', list)
 
-          //loading finish
-          commit('LOADING', false)
-        })
+            //loading finish
+            commit('LOADING', false)
+          })
       }
     },
     getters: {
       getSkill: state => {
-        return state.skillList
+        return state.frontData
       }
       //引数ありの場合
       // getFavoriteData: state => id => {
