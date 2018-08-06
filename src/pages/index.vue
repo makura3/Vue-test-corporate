@@ -70,11 +70,9 @@ export default {
       loading: 'loading'
     })
   },
-  mounted() {
-    this.$nextTick(function() {
-      let _s = new scrollAnimation()
-      _s.setAnimation()
-    })
+  updated() {
+    let _s = new scrollAnimation()
+    _s.setAnimation()
   }
 }
 </script>

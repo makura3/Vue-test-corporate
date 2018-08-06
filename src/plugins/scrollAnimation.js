@@ -9,9 +9,9 @@ export class scrollAnimation {
 
   setAnimation() {
     console.log('js gogo!')
-    // let $lists = document.querySelector('.jsShowScroll'),
-    //   $window = window,
-    //   windowHight = $window.parent.screen.height,
-    //   topWindow = $window.scrollTop()
+    let $lists = document.querySelector('.jsShowScroll'),
+      $window = window,
+      windowHight = $window.parent.screen.height,
+      // rectあたりで座標の取得、制御
   }
 }
