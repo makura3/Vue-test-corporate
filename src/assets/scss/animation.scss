@@ -1,3 +1,4 @@
+// 時計回り回転
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -8,6 +9,7 @@
   }
 }
 
+// 逆時計回り回転
 @keyframes rotation_s {
   0% {
     transform: rotate(0deg);

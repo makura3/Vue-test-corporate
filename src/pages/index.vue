@@ -35,7 +35,7 @@
       </section>
 
       <section class="wrap _center">
-        <div class="content">
+        <div class="content jsShowScroll">
           <h2>Skill</h2>
           <Bar />
         </div>
@@ -72,7 +72,7 @@ export default {
   },
   updated() {
     let _s = new scrollAnimation()
-    _s.setAnimation()
+    _s.setScrollEvent(700) //監視時間をパラメータとして渡す
   }
 }
 </script>
