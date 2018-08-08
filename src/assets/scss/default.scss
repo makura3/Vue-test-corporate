@@ -71,6 +71,7 @@ ul {
     &:after {
       bottom: -10%;
       transform: skew(0, 4deg);
+      top: auto;
     }
   }
 

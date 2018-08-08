@@ -6,7 +6,7 @@
           <span class="text">Hello.</span>
         </div>
         <div class="arrow-wrap">
-          <span class="arrow">scroll</span>
+          <span class="arrow"></span>
         </div>
       </section>
       <section class="wrap _center bg-gra_one">
@@ -148,7 +148,7 @@ export default {
 
     &::after {
       background-color: $y;
-      bottom: 25px;
+      bottom: 6px;
       content: '';
       height: 17px;
       left: 50%;

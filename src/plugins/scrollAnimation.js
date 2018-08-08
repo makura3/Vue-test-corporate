@@ -61,10 +61,7 @@ export class scrollAnimation {
 
       if (isShow && !target.classList.contains(addClassName)) {
         target.classList.add(addClassName)
-        console.log('taegetを表示しました！')
       }
-
-      console.log(isShow)
     }
   }
 }
