@@ -2,13 +2,21 @@
   <div class="wrapper">
     <!-- <Header /> -->
 
-    <nuxt/>
+    <main v-if="loading">
+      <div class="loading">
+        ローディングああああ
+      </div>
+    </main>
 
-    <Footer />
+    <main v-else>
+      <nuxt/>
+      <Footer />
+    </main>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 // import Header from '~/components/header.vue'
 import Footer from '~/components/footer.vue'
 
@@ -16,6 +24,11 @@ export default {
   components: {
     // Header,
     Footer
+  },
+  computed: {
+    ...mapState({
+      loading: 'loading'
+    })
   }
 }
 </script>

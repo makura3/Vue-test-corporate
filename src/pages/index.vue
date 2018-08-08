@@ -1,12 +1,6 @@
 <template>
   <div>
-    <main v-if="loading">
-      <div class="loading">
-        ローディング
-        <!-- <i class="fa fa-cog fa-3x" aria-hidden="true"></i> -->
-      </div>
-    </main>
-    <main v-else>
+    <main>
       <section class="wrap _wide back_cat">
         <div class="top-text">
           <span class="text">Hello.</span>
@@ -70,7 +64,7 @@ export default {
       loading: 'loading'
     })
   },
-  updated() {
+  mounted() {
     let _s = new scrollAnimation()
     _s.setScrollEvent(700) //監視時間をパラメータとして渡す
   }
@@ -149,7 +143,7 @@ export default {
       position: absolute;
       top: -40px;
       width: 1px;
-      z-index: 1;
+      z-index: 2;
     }
 
     &::after {
@@ -162,6 +156,7 @@ export default {
       position: absolute;
       transform: rotate(-45deg);
       width: 17px;
+      z-index: 1;
     }
   }
 }
